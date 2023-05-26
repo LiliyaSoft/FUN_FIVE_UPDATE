@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1578ca36-7dd6-4c9a-9a6d-7b1748a05a72" name="Changes" comment="created">
       <change beforePath="G:/FUN_FIVE_UPDATE/.idea/workspace.xml" beforeDir="false" afterPath="G:/FUN_FIVE_UPDATE/.idea/workspace.xml" afterDir="false" />
@@ -29,6 +32,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -40,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685083951150</updated>
-      <workItem from="1685083953467" duration="285000" />
+      <workItem from="1685083953467" duration="372000" />
     </task>
     <task id="LOCAL-00001" summary="created">
       <created>1685084088822</created>
@@ -63,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685084189067</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="created">
+      <created>1685084250411</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685084250411</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
