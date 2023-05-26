@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1578ca36-7dd6-4c9a-9a6d-7b1748a05a72" name="Changes" comment="">
-      <change afterPath="G:/FUN_FIVE_UPDATE/.idea/.gitignore" afterDir="false" />
-      <change afterPath="G:/FUN_FIVE_UPDATE/.idea/misc.xml" afterDir="false" />
-      <change afterPath="G:/FUN_FIVE_UPDATE/.idea/modules.xml" afterDir="false" />
-      <change afterPath="G:/FUN_FIVE_UPDATE/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="G:/FUN_FIVE_UPDATE/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="G:/FUN_FIVE_UPDATE/FUN_FIVE_UPDATE.iml" afterDir="false" />
-      <change afterPath="G:/FUN_FIVE_UPDATE/READ.MD" afterDir="false" />
+    <list default="true" id="1578ca36-7dd6-4c9a-9a6d-7b1748a05a72" name="Changes" comment="created">
+      <change afterPath="G:/FUN_FIVE_UPDATE/UPDATE.MD" afterDir="false" />
+      <change beforePath="G:/FUN_FIVE_UPDATE/.idea/workspace.xml" beforeDir="false" afterPath="G:/FUN_FIVE_UPDATE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="G:/FUN_FIVE_UPDATE/READ.MD" beforeDir="false" afterPath="G:/FUN_FIVE_UPDATE/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +41,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685083951150</updated>
-      <workItem from="1685083953467" duration="103000" />
+      <workItem from="1685083953467" duration="191000" />
     </task>
+    <task id="LOCAL-00001" summary="created">
+      <created>1685084088822</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685084088822</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created" />
+    <option name="LAST_COMMIT_MESSAGE" value="created" />
   </component>
 </project>
