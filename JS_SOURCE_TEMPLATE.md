@@ -101,7 +101,40 @@
 
 ### 6.定义书城/分类数据
     详情请参考有ranks的JS源;
+    类型1, 书城支持一级二级分类,
+    ranks = [
+        {
+            title: { // 一级分类
+                key: xx,   // 分类参数
+                value: "分类1"  // 分类名称 
+            }
+            categories: [ // 二级分类数组
+                {
+                    key: "xxx",
+                    value: "分类1" // 分类名
+                }, { 
+                    key: "xxx",
+                    value: "分类2" // 分类名
+                }
+            ]
+        }
+    ]
 
+
+    类型1, 仅定义一级分类,
+    ranks = [
+        {
+            title: { // 一级分类
+                key: xx,   // 分类参数
+                value: "分类1"  // 分类名称 
+            }
+        }, {
+            title: { // 一级分类
+                key: xx,   // 分类参数
+                value: "分类2"  // 分类名称 
+            }
+        }
+    ]
 
 ### 7.定义书源信息
     var bookSource = JSON.stringify({
