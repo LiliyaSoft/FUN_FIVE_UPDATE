@@ -1,10 +1,10 @@
 # 编写JS源时,请参考本模板;
 
 ## 源基本方法, 以下四个方法, 缺少一个，都是无效源;
-    #### 1.search
-    #### 2.detail
-    #### 3.catalog
-    #### 4.chapter
+    1.search
+    2.detail
+    3.catalog
+    4.chapter
 
 ### 1. 搜索方法
     /**
