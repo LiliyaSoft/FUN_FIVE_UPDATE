@@ -114,42 +114,42 @@ var bookSource = JSON.stringify({
 
 ###authorization 可接受以下三种定义方式;
 
-1.
-authorization: "url地址", 此种方式, 将通过WebView(内置浏览器)登录;
+    1.
+    authorization: "url地址", 此种方式, 将通过WebView(内置浏览器)登录;
 
-2. 不推荐使用这种方式, 不推荐, 不推荐, 不推荐, 非常, 强烈, 特别不推荐~
-authorization: [标签1, 标签2] // 此种方式, App将会自动根据标签数量, 创建输入框, 和一个按钮, 当输入内容后, 点击按钮, 就会将所有输入框内容合并为一个对象, 将此对象作为参数, 调用方法xxx
+    2. 不推荐使用这种方式, 不推荐, 不推荐, 不推荐, 非常, 强烈, 特别不推荐~
+    authorization: [标签1, 标签2] // 此种方式, App将会自动根据标签数量, 创建输入框, 和一个按钮, 当输入内容后, 点击按钮, 就会将所有输入框内容合并为一个对象, 将此对象作为参数, 调用方法xxx
 
-3. 推荐使用这种方式, 推荐, 推荐, 推荐, 非常, 强烈, 特别推荐~
-authorization: [
-    {
-        id: "phone"
-        name: "" // 本控件显示名称;
-        type: "控件类型" // 控件类型可选 phone，password，text，button，image， 其中, phone与password与text一般，都是输入框,只不过phone会对输入内容做校验，如果不是手机号码，会报错，password会对输入的内容做遮掩处理。button是按钮，image是图像框，用来做图文验证码；
-        acation: "本控件所绑定的JS方法名称" // 仅当type是button或image时，才会需要此参数, 点击按钮，会调用所指定的方法;
-        bind: [] // 本控件绑定的元素, 当本控件是button时，点击本控件， 会将所绑定的元素，转为对象，传递给action定义的方法;
-    }
-]
-可参考如下定义;
+    3. 推荐使用这种方式, 推荐, 推荐, 推荐, 非常, 强烈, 特别推荐~
+    authorization: [
+        {
+            id: "phone"
+            name: "" // 本控件显示名称;
+            type: "控件类型" // 控件类型可选 phone，password，text，button，image， 其中, phone与password与text一般，都是输入框,只不过phone会对输入内容做校验，如果不是手机号码，会报错，password会对输入的内容做遮掩处理。button是按钮，image是图像框，用来做图文验证码；
+            acation: "本控件所绑定的JS方法名称" // 仅当type是button或image时，才会需要此参数, 点击按钮，会调用所指定的方法;
+            bind: [] // 本控件绑定的元素, 当本控件是button时，点击本控件， 会将所绑定的元素，转为对象，传递给action定义的方法;
+        }
+    ]
+    可参考如下定义;
 
-authorization: [
-    {
-        id: "id_phone",
-        type: "phone", 
-        name: "手机号码",
-    }, {
-        id: "id_code",
-        type: "text", 
-        name: "验证码",
-    }, {
-        type: "button",
-        bind: ["id_phone"],
-        name: "获取验证码",
-        action: "getPhoneCode" // 调用getPhoneCode方法时, 会传入一个对象参数, 此对象内有id_phone字段, 内容是 id_phone 输入框内容;
-    }, {
-        type: "button",
-        bind: ["id_phone", "id_code"],
-        name: "登录",
-        action: "login" // 调用login方法时, 会传入一个对象参数, 此对象内有id_phone和id_code字段, 内容分别对应 id_phone和id_code输入框内容;
-    }
-]
+    authorization: [
+        {
+            id: "id_phone",
+            type: "phone", 
+            name: "手机号码",
+        }, {
+            id: "id_code",
+            type: "text", 
+            name: "验证码",
+        }, {
+            type: "button",
+            bind: ["id_phone"],
+            name: "获取验证码",
+            action: "getPhoneCode" // 调用getPhoneCode方法时, 会传入一个对象参数, 此对象内有id_phone字段, 内容是 id_phone 输入框内容;
+        }, {
+            type: "button",
+            bind: ["id_phone", "id_code"],
+            name: "登录",
+            action: "login" // 调用login方法时, 会传入一个对象参数, 此对象内有id_phone和id_code字段, 内容分别对应 id_phone和id_code输入框内容;
+        }
+    ]
