@@ -26,8 +26,6 @@
             words: ,        // 书籍字数
             update: ,       // 更新日期时间戳或字符串
             tags: ,         // 书籍tags
-            score:,         // 书籍得分、评分;
-            comment: ,      // 书籍评论Url, 必须有 comment() 方法获得评论内容;
         }
     ]
 
@@ -50,8 +48,6 @@
         words: ,        // 书籍字数, 如上.
         update: ,       // 更新日期时间戳或字符串, 如上.
         tags: ,         // 书籍tags, 如上.
-        score:,         // 书籍得分、评分;, 如上.
-        comment: ,      // 书籍评论Url, 必须有 comment() 方法获得评论内容;, 如上.
     }
 
 ### 3.获取章节列表方法
@@ -99,8 +95,6 @@
             words: ,        // 书籍字数
             update: ,       // 更新日期时间戳或字符串
             tags: ,         // 书籍tags
-            score:,         // 书籍得分、评分;
-            comment: ,      // 书籍评论Url, 必须有 comment() 方法获得评论内容;
         }
     ]
 
