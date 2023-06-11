@@ -1,10 +1,10 @@
 # 编写JS源时,请参考本模板;
 
 ## 源基本方法, 以下四个方法, 缺少一个，都是无效源;
-#### 1.search
-#### 2.detail
-#### 3.catalog
-#### 4.chapter
+    #### 1.search
+    #### 2.detail
+    #### 3.catalog
+    #### 4.chapter
 
 ### 1. 搜索方法
     /**
@@ -186,3 +186,8 @@
             action: "login" // 调用login方法时, 会传入一个对象参数, 此对象内有id_phone和id_code字段, 内容分别对应 id_phone和id_code输入框内容;
         }
     ]
+
+
+## 拓展方法(非必须)
+#### 1.profile 
+#### 2.comment 
