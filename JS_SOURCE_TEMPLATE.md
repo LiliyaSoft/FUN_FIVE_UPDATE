@@ -112,7 +112,7 @@ var bookSource = JSON.stringify({
     ranks: ranks           // 定义书城分类字段名
 })
 
-###authorization 可接受以下三种定义方式;
+### authorization 可接受以下三种定义方式;
 
     1.
     authorization: "url地址", 此种方式, 将通过WebView(内置浏览器)登录;
