@@ -1,9 +1,9 @@
 # 编写JS源时,请参考本模板;
 
 ## 源基本方法, 以下四个方法, 缺少一个，都是无效源;
-### search
-### detail
-### catalog
+#### search
+#### detail
+#### catalog
 #### chapter
 
 ### 1. 搜索方法
