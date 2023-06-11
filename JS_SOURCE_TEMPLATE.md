@@ -6,6 +6,8 @@
     3.catalog
     4.chapter
 
+## 源基本方法
+
 ### 1. 搜索方法
     /**
     * @param  key   搜索内容
