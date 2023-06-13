@@ -59,10 +59,10 @@
     function catalog(url: String) {}
     @RETURN
     {
-        isVip: , // 本章节是否是Vip/收费章节;
+        vip: , // 本章节是否是Vip/收费章节;
         name: ,  // 章节名称
         url:  ,  // 章节地址
-        isVolume: , // 是否是卷名? 
+        volume: , // 是否是卷名? 
     }
 
 
