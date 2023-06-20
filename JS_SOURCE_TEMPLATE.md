@@ -140,6 +140,7 @@
 
 ### 7.定义书源信息
     var bookSource = JSON.stringify({
+        group: "xxx分组",   // 定义默认分组;
         name: "xxxx小说",   // 源名称, 可随意, 可重复;
         url: "17k.com",    // 源网站地址, 不可重复, 重复的url,会被视为一个书源;
         authorization: "https://passport.17k.com/login", // 定义登录访问Url, 如果希望使用post/get进行登录, 请参考
