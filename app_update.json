@@ -1,12 +1,12 @@
 {
 
-    "date": 1687520028411,
+    "date": 1687543260395,
     "appVer": 1,
     "mainVer": 0,
     "secVer": 2,
     "staVer": 1,
     "bateVer": 1,
-    "md5": "md5",
-    "download": "https://downv6.qq.com/qqweb/QQ_1/android_apk/Android_8.9.28.10155_537147618_64.apk",
-    "updates": "优化：\n新版QQ，助力轻松开展在线教学！\n- 群聊新增“群课堂”功能，手机电脑均可参与；\n- 支持按区域分享屏幕，手机电脑多端互通，轻松发起在线教学/会议；\n- 多人语音和视频，全员静音可关闭成员摄像头，多人互动更有序；\n- 家校群作业，新增涂鸦红笔及评分，批改更清晰；\n- 优化了一些体验问题，提升版本稳定性。"
+    "md5": "7CA87A7F388B8F668853BBBB0E920BB0",
+    "download": "https://gitee.com/liliysoft/FUN_FIVE_UPDATE/releases/download/1.0/app-release.apk",
+    "updates": "第一个测试版本"
 }
