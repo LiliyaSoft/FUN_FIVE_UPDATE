@@ -17,25 +17,26 @@
     @RETURN:
     @其中, 名称前标有*号的, 是必须存在的;
     {
-        "datas": [
-        ]
-    }
-    [
-        {
-            * name: ,   // 书籍名称
-            * author: , // 书籍作者
-            * detail: , // 书籍URL或地址
-            cover: ,    // 书籍封面
-            summary: ,  // 书籍简介
-            category: , // 书籍类型
-            status: ,   // 书籍状态, 统一为 连载, 完结
-            lastChapter: ,  // 最后章节名
-            words: ,        // 书籍字数
-            update: ,       // 更新日期时间戳或字符串
-            tags: ,         // 书籍tags
-        }
-    ]
+        "datas": 
+        [
+            {
+                * name: ,   // 书籍名称
+                * author: , // 书籍作者
+                * detail: , // 书籍URL或地址
+                cover: ,    // 书籍封面
+                summary: ,  // 书籍简介
+                category: , // 书籍类型
+                status: ,   // 书籍状态, 统一为 连载, 完结
+                lastChapter: ,  // 最后章节名
+                words: ,        // 书籍字数
+                update: ,       // 更新日期时间戳或字符串
+                tags: ,         // 书籍tags
+            }
+        ], 
 
+        "hasNext": Boolean  // 是否支持下一页? 
+    }
+    
 ### 2.获取书籍信息方法
     /**
     * @param  url   书籍详情Url或Id
