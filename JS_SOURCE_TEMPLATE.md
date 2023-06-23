@@ -11,10 +11,15 @@
 ### 1. 搜索方法
     /**
     * @param  key   搜索内容
+    * @param  pageIdx 页数索引 （如果书源不支持搜索下一页, 忽略此参数即可） ;
     */
-    function search (key: String) {  }
+    function search (key: String, pageIdx: Int) {  }
     @RETURN:
     @其中, 名称前标有*号的, 是必须存在的;
+    {
+        "datas": [
+        ]
+    }
     [
         {
             * name: ,   // 书籍名称
