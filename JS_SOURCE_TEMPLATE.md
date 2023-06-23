@@ -36,6 +36,22 @@
 
         "hasNext": Boolean  // 是否支持下一页? 
     }
+    @OR
+    [
+        {
+            * name: ,   // 书籍名称
+            * author: , // 书籍作者
+            * detail: , // 书籍URL或地址
+            cover: ,    // 书籍封面
+            summary: ,  // 书籍简介
+            category: , // 书籍类型
+            status: ,   // 书籍状态, 统一为 连载, 完结
+            lastChapter: ,  // 最后章节名
+            words: ,        // 书籍字数
+            update: ,       // 更新日期时间戳或字符串
+            tags: ,         // 书籍tags
+        }
+    ]       
     
 ### 2.获取书籍信息方法
     /**
@@ -78,7 +94,13 @@
     * @return String 正文内容;
     */
     function chapter(url: String) {}
-
+    @RETURN
+    {
+        content: , //正文内容
+        msg: //章节附加内容, 如 作者说明, 显示在章节末尾;
+    }
+    @OR
+    章节内容字符串
 
 ### 5.获得分类书籍方法
     /**
