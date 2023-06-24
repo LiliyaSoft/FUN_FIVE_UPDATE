@@ -34,7 +34,7 @@
             }
         ], 
 
-        "hasNext": Boolean  // 是否支持下一页? 
+        "hasNext": Boolean  // 是否支持下一页?  如果返回的datas为empty，则默认将次字段设为false;
     }
     @OR
     [
