@@ -11,7 +11,7 @@
 ### 1. 搜索方法
     /**
     * @param  key   搜索内容
-    * @param  pageIdx 页数索引 （如果书源不支持搜索下一页, 忽略此参数即可） ;
+    * @param  pageIdx 页数索引 （如果书源不支持搜索下一页, 忽略此参数即可）, 此参数默认从0开始 ;
     */
     function search (key: String, pageIdx: Int) {  }
     @RETURN:
