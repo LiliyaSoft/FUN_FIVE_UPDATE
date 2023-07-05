@@ -13,10 +13,22 @@
     req.proxy("address", port)
 
     开始请求
-    get() or post(提交数据)
+    get() or post(提交数据): Http2Result
 
     如果在提交post数据时, header中未指定content-type, 则App会对提交数据进行检测, 如果数据是json, 则以application/json charset=${data}.charset 进行提交；
     如果数据不是json，但是是字符串类型，则App会将其视为一段字符串数据, 并且使用默认的 application/x-www-form-urlencoded 进行提交；
     如果数据不是json，也不是字符串，那么App将其视为bytes，使用 application/octet-stream 进行提交；
     如果需要提交multipart/form-data 表单， 则提交的数据， 必须是json；
 
+    
+    Http2Result = {     
+        var code    = -1
+        var body    = ByteArray(0)
+        var headers = {}
+        var cookies = {}
+
+        var url      : String = ""
+        var domain   : String = ""
+        var error    : String = ""
+        var protocol : String = "" 
+    }
