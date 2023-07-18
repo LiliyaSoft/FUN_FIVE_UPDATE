@@ -32,3 +32,14 @@
         var error    : String = ""
         var protocol : String = "" 
     }
+
+
+### 🛠设备方法:
+    // 获得Android设备唯一ID, len是ID长度, 最小16, 最大32;
+    getAndroidId(len=(16..32)): HexString
+
+    // 获得固定UUID, 根据AndroidID运算而来;
+    getUUID (): HexString
+
+    // 获得随机UUID
+    getRandomUUID(): HexString
