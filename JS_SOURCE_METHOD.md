@@ -36,10 +36,10 @@
 
 ### 🛠设备方法:
     // 获得设备唯一ID, len是ID长度, 最小16, 最大32;
-    getDeviceID(len=(16..32)): HexString
+    getDeviceID(len=(16..32)): String
 
     // 获得固定UUID, 根据AndroidID运算而来;
-    getUUID (): HexString
+    getUUID (): String
 
     // 获得随机UUID
-    getRandomUUID(): HexString
+    getRandomUUID(): String
