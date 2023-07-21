@@ -65,7 +65,10 @@
 
 
     ResultObject = {
-        select(cssQuery): 返回一个你无需关心的对象;
+        select(cssQuery): ResultObject
+        // select 简写; 嘎嘎嘎;
+        st(cssQuery): ResultObject
+
         text(): String
         attr(name): String
         remove(cssQuery): undefined
