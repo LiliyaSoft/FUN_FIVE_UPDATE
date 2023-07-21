@@ -49,10 +49,32 @@
 -[HTML2 测试示例](https://gitee.com/liliysoft/FUN_FIVE_UPDATE/blob/master/Html2Test.js)
 
     // 内置解析器2(推推推推...推荐)
-    let res = HTML2.parse(HTML): 返回一个你无需关心的对象;
-    
+    // 仅 HTML.parse 的返回对象 支持 $('选择器') 写法;
+    // ResultObject 实例对象仅支持通过方法 select('选择器') 进行查询;
+
+    let res = HTML2.parse(HTML): HTML2
+    HTML2 = {
+        return function(cssQuery): ResultObject 
+    }    
+
     // 查询, 返回类型为Object, 不是数组;
     x = res('cssQuery'): ResultObject
+
+
+    ResultObject = {
+        select(cssQuery): 返回一个你无需关心的对象;
+        text(): String
+        attr(name): String
+        remove(cssQuery): undefined
+        html(): String
+        size(): Int
+        isEmpty(): Bool
+        ~~get(idx): JsoupItem~~
+        toList(): Array<JsoupItem>
+        forEach((chihld: JsoupItem) => { // your code... })
+    }
+
+
 
     // 获得字符串
     x.text(): String
@@ -79,10 +101,10 @@
     x.get(idx): ResultObject
 
     // 将对象转为Array, 注意, Array内成员都是object, 而非字符串;
-    x.toList(): Array<ResultObject>
+    x.toList(): Array<JsoupItem>
 
     // 使用内置forEach, 与JS使用方法一直, 不过参数只有一个, child;
-    // 例 x.forEach((chihld) => { // your code... })
+    // 例 x.forEach((chihld: JsoupItem) => { // your code... })
     x.forEach()
     
     注注注注...注意：ResultObject 即是 x 的类型, ResultObject 对象亦可使用('cssQuery')进行查询, 如 x('cssQuery');
