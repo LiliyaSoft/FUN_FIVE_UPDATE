@@ -70,13 +70,14 @@
         attr(name): String
         remove(cssQuery): undefined
         html(): String
+        string(): String
         size(): Int
         isEmpty(): Bool
         ~~get(idx): JsoupItem~~
+        toString(): String 
         toList(): Array<ResultObject>
         forEach((chihld: ResultObject) => { // your code... })
     }
-
 
 
     // 获得字符串
@@ -88,14 +89,14 @@
     // 将指定查询数据从本对象中移出;
     x.remove(cssQuery): undefined
 
-    // 返回x字符串, 一般情况下等同于text()
+    // 返回x中的HTML内代码
     x.string(): String
 
-    // 返回html代码
+    // 返回html代码,包含父元素;
     x.html()
 
     // 返回已解析HTML标签数量;
-    x.Size(): Int
+    x.size(): Int
 
     // 检查是否为空
     x.isEmpty(): Bool
