@@ -46,8 +46,9 @@
 
 
 ### 🛠网页解析方法:
+[HTML2 测试示例](https://gitee.com/liliysoft/FUN_FIVE_UPDATE/blob/master/Html2Test.js)
     // 内置解析器2(推推推推...推荐)
-    [HTML2 测试示例](https://gitee.com/liliysoft/FUN_FIVE_UPDATE/blob/master/Html2Test.js)
+    
     let res = HTML2.parse(HTML): 返回一个你无需关心的对象;
     
     // 查询, 返回类型为Object, 不是数组;
