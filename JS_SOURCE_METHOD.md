@@ -43,3 +43,11 @@
 
     // 获得随机UUID
     getRandomUUID(): String
+
+
+### 🛠网页解析方法:
+    增加 xiyueta html解析器(https://www.xiyueta.com/doc/)
+    const xiyueta = require('xiyueta');
+    例: html = '<h2 class="Title">Hello world</h2>'
+    let res = xiyueta.load(html)
+    let name = res('h2.Title').text() 
