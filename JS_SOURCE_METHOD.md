@@ -73,8 +73,8 @@
         size(): Int
         isEmpty(): Bool
         ~~get(idx): JsoupItem~~
-        toList(): Array<JsoupItem>
-        forEach((chihld: JsoupItem) => { // your code... })
+        toList(): Array<ResultObject>
+        forEach((chihld: ResultObject) => { // your code... })
     }
 
 
@@ -104,10 +104,10 @@
     ~~x.get(idx): ResultObject~~
 
     // 将对象转为Array, 注意, Array内成员都是object, 而非字符串;
-    x.toList(): Array<JsoupItem>
+    x.toList(): Array<ResultObject>
 
     // 使用内置forEach, 与JS使用方法一直, 不过参数只有一个, child;
-    // 例 x.forEach((chihld: JsoupItem) => { // your code... })
+    // 例 x.forEach((chihld: ResultObject) => { // your code... })
     x.forEach()
     
     注注注注...注意：ResultObject 即是 x 的类型, ResultObject 对象亦可使用('cssQuery')进行查询, 如 x('cssQuery');
