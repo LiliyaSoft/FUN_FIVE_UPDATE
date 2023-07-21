@@ -46,13 +46,48 @@
 
 
 ### 🛠网页解析方法:
-    // 增加 xiyueta html解析器(https://www.xiyueta.com/doc/)
-    require('xiyueta');
-    例: html = '<h2 class="Title">Hello world</h2>'
-    let res = xiyueta.load(html)
-    let name = res('h2.Title').text() 
+    // 内置解析器2(推推推推...推荐)
+    let res = HTML2.parse(HTML): 返回一个你无需关心的对象;
+    
+    // 查询, 返回类型为Object, 不是数组;
+    x = res('cssQuery'): ResultObject
 
-    // 内置解析器
+    // 获得字符串
+    x.text(): String
+
+    // 获得属性值
+    x.attr(name): String
+
+    // 将指定查询数据从本对象中移出;
+    x.remove(cssQuery): undefined
+
+    // 返回x字符串, 一般情况下等同于text()
+    x.string(): String
+
+    // 返回html代码
+    x.html()
+
+    // 返回已解析HTML标签数量;
+    x.Size(): Int
+
+    // 检查是否为空
+    x.isEmpty(): Bool
+
+    // 获得指定idx索引处成员对象;
+    x.get(idx): ResultObject
+
+    // 将对象转为Array, 注意, Array内成员都是object, 而非字符串;
+    x.toList(): Array<ResultObject>
+
+    // 使用内置forEach, 与JS使用方法一直, 不过参数只有一个, child;
+    // 例 x.ForEach((chihld) => { // your code... })
+    x.ForEach()
+    
+    注注注注...注意：ResultObject 即是 x 的类型, ResultObject 对象亦可使用('cssQuery')进行查询, 如 x('cssQuery');
+    
+
+
+    // 内置解析器1
     let res = HTML.parse(HTML)
     x = res('jsoup选择器')
     x.text(): String
