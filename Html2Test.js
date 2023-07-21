@@ -7,10 +7,10 @@ const search = (key) => {
   let res = HTML2.parse(response)
   res('.rank-book-list > a').forEach((child) => {
     array.push({
-      name: child('.book-name').text(),
-      author: child('.book-extra').text().match('(.+)(?= 丨)')[0].trim(),
-      cover: child('.book-cover > img').attr('src'),
-      detail: `${baseUrl}${child('a').attr('href')}`,
+      name: child.select('.book-name').text(),
+      author: child.select('.book-extra').text().match('(.+)(?= 丨)')[0].trim(),
+      cover: child.select('.book-cover > img').attr('src'),
+      detail: `${baseUrl}${child.select('a').attr('href')}`,
     })
   })
   return JSON.stringify(array)
@@ -21,12 +21,12 @@ const detail = (url) => {
   let response = GET(url)
   let res = HTML2.parse(response)
   let book = {
-    summary: res('.about-text').text(),
-    status: res('.book-data > span:nth-child(7)').text(),
-    category: res('.book-cats').text().replace('/', ' '),
-    words: res('.book-data > span:nth-child(1)').text(),
-    update: res('.book-last-update').text().match('(?<=更新于)(.+)')[0],
-    lastChapter: res('.chapter-item.new > a').text(),
+    summary: res.select('.about-text').text(),
+    status: res.select('.book-data > span:nth-child(7)').text(),
+    category: res.select('.book-cats').text().replace('/', ' '),
+    words: res.select('.book-data > span:nth-child(1)').text(),
+    update: res.select('.book-last-update').text().match('(?<=更新于)(.+)')[0],
+    lastChapter: res.select('.chapter-item.new > a').text(),
     catalog: `${url}#catalog`
   }
   return JSON.stringify(book)
@@ -41,8 +41,8 @@ const catalog = (url) => {
     array.push({ name: booklet('.volume-title').text() })
     booklet('.chapter').forEach((chapter) => {
       array.push({
-        name: chapter('a').text(),
-        url: `${baseUrl}${chapter('a').attr('href')}`,
+        name: chapter.select('a').text(),
+        url: `${baseUrl}${chapter.select('a').attr('href')}`,
         vip: chapter.sS == 0
       })
     })
