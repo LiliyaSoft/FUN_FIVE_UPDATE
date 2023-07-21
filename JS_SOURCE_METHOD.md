@@ -80,8 +80,8 @@
     x.toList(): Array<ResultObject>
 
     // 使用内置forEach, 与JS使用方法一直, 不过参数只有一个, child;
-    // 例 x.ForEach((chihld) => { // your code... })
-    x.ForEach()
+    // 例 x.forEach((chihld) => { // your code... })
+    x.forEach()
     
     注注注注...注意：ResultObject 即是 x 的类型, ResultObject 对象亦可使用('cssQuery')进行查询, 如 x('cssQuery');
     
