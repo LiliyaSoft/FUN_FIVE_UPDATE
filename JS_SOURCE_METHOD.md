@@ -47,11 +47,14 @@
 
 ### 🛠网页解析方法:
 -[HTML2 测试示例](https://gitee.com/liliysoft/FUN_FIVE_UPDATE/blob/master/Html2Test.js)
+    // 内置解析器2
 
-    // 内置解析器2(推推推推...推荐)
-    // 仅 HTML.parse 的返回对象 支持 $('选择器') 写法;
+    (
+        本方法暂未定型, 随时可能更改, 请各位慎重使用;
+    )
+
+    // 仅 HTML2.parse() 的返回对象支持 $('选择器') 写法;
     // ResultObject 实例对象仅支持通过方法 select('选择器') 进行查询;
-
     let res = HTML2.parse(HTML): HTML2
     HTML2 = {
         return function(cssQuery): ResultObject 
@@ -98,7 +101,7 @@
     x.isEmpty(): Bool
 
     // 获得指定idx索引处成员对象;
-    x.get(idx): ResultObject
+    ~~x.get(idx): ResultObject~~
 
     // 将对象转为Array, 注意, Array内成员都是object, 而非字符串;
     x.toList(): Array<JsoupItem>
