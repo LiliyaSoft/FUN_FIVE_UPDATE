@@ -13,6 +13,11 @@ const search = (key) => {
       detail: `${baseUrl}${child.select('a').attr('href')}`,
     })
   })
+  
+  
+  res('.rank-book-list > a').forEach((child) => {
+      LOGE(child.html())
+  })
   return JSON.stringify(array)
 }
 
@@ -21,12 +26,12 @@ const detail = (url) => {
   let response = GET(url)
   let res = HTML2.parse(response)
   let book = {
-    summary: res.select('.about-text').text(),
-    status: res.select('.book-data > span:nth-child(7)').text(),
-    category: res.select('.book-cats').text().replace('/', ' '),
-    words: res.select('.book-data > span:nth-child(1)').text(),
-    update: res.select('.book-last-update').text().match('(?<=更新于)(.+)')[0],
-    lastChapter: res.select('.chapter-item.new > a').text(),
+    summary: res('.about-text').text(),
+    status: res('.book-data > span:nth-child(7)').text(),
+    category: res('.book-cats').text().replace('/', ' '),
+    words: res('.book-data > span:nth-child(1)').text(),
+    update: res('.book-last-update').text().match('(?<=更新于)(.+)')[0],
+    lastChapter: res('.chapter-item.new > a').text(),
     catalog: `${url}#catalog`
   }
   return JSON.stringify(book)
@@ -38,8 +43,8 @@ const catalog = (url) => {
   let res = HTML2.parse(response)
   let array = []
   res('.section-list > div').forEach((booklet) => {
-    array.push({ name: booklet('.volume-title').text() })
-    booklet('.chapter').forEach((chapter) => {
+    array.push({ name: booklet.select('.volume-title').text() })
+    booklet.select('.chapter').forEach((chapter) => {
       array.push({
         name: chapter.select('a').text(),
         url: `${baseUrl}${chapter.select('a').attr('href')}`,
@@ -54,7 +59,7 @@ const catalog = (url) => {
 const chapter = (url) => {
   let response = GET(url)
   let res = HTML2.parse(response)
-  return res('.article-text')
+  return res('.article-text').toString()
 }
 
 //个人中心
