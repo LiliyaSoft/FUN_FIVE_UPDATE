@@ -46,8 +46,15 @@
 
 
 ### 🛠网页解析方法:
-    增加 xiyueta html解析器(https://www.xiyueta.com/doc/)
+    // 增加 xiyueta html解析器(https://www.xiyueta.com/doc/)
     const xiyueta = require('xiyueta');
     例: html = '<h2 class="Title">Hello world</h2>'
     let res = xiyueta.load(html)
     let name = res('h2.Title').text() 
+
+    // 内置解析器
+    let res = HTML.parse(HTML)
+    x = res('jsoup选择器')
+    x.text(): String
+    x.attr(name): String
+    x.remove('jsoup选择器')
