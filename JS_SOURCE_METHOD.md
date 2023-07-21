@@ -73,7 +73,6 @@
         string(): String
         size(): Int
         isEmpty(): Bool
-        ~~get(idx): JsoupItem~~
         toString(): String 
         toList(): Array<ResultObject>
         forEach((chihld: ResultObject) => { // your code... })
@@ -100,9 +99,6 @@
 
     // 检查是否为空
     x.isEmpty(): Bool
-
-    // 获得指定idx索引处成员对象;
-    ~~x.get(idx): ResultObject~~
 
     // 将对象转为Array, 注意, Array内成员都是object, 而非字符串;
     x.toList(): Array<ResultObject>
