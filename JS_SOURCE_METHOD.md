@@ -175,7 +175,7 @@
     
     // 如果ArrayBuffer内的数据是BASE64编码的数据, 可使用此方法还原数据; 
     ArrayBuffer.unBase64(): ArrayBuffer
-    
+
 
 ### 🛠️字符串对象相关方法(String):
     // 将字符串进行base64编码;
@@ -328,12 +328,6 @@
 ### 🛠杂七杂八:
     console.log(x)/ LOGE(x)/ LOGD(x)
     ENCODE(text, code=[编码, base64]): String
-
-    $ = HTML.parse(HTML)
-    x = $('jsoup选择器')
-    x.text(): String
-    x.attr(name): String
-    x.remove('jsoup选择器')
 
     // 本地数据储存操作
     localStorage.setItem (key, value)
