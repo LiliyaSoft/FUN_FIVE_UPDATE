@@ -34,6 +34,37 @@
     }
 
 
+    @param url     请求网络地址;
+    @paran headers 定义自定义请求头, 数据类型必须是Json或JsonArray, 如 { 'content-type': 'xxxx', ... } 或 [ 'content-type: xxxx', ... ]
+    @param type    定义返回数据类型, 目前仅支持"string"与"bytes"; 默认是"string"
+    @return        如果type为"bytes" 则返回ArrayBuffer(字节数组), 否则返回String; 
+    GET(url: String, headers: Json|JsonArray|null, type: String = "string" | "bytes"): type
+
+    // 本方法与GET一致, 默认返回类型是“bytes”;
+    GET_BYTES(..., type='bytes')
+    示例： 
+        GET/GET_BYTES ("http...", { 'content-type': 'xxxx', ... } 或 [ 'content-type: xxxx', ... ])
+        GET/GET_BYTES ("http...", { headers:{...}} 或 { headers:[...] })
+
+
+    @param url       请求网络地址;
+    @param postParam post请求数据, 支持Json、String、ArrayBuffer; 也支持在本参数内定义请求头(可以,但不建议)。  
+    @paran headers   定义自定义请求头, 数据类型必须是Json或JsonArray, 如 { 'content-type': 'xxxx', ... } 或 [ 'content-type: xxxx', ... ]
+    @param type      定义返回数据类型, 目前仅支持"string"与"bytes"; 默认是"string"
+    @return          如果type为"bytes" 则返回ArrayBuffer(字节数组), 否则返回String; 
+    POST(url: String, postParam: String|Json, headers: Json|JsonArray|null, type: String = "string" | "bytes"): type
+
+    // 本方法与POST一致, 默认返回类型是“bytes”;
+    POST_BYTES(..., type='bytes') 
+    示例： 
+        POST/POST_BYTES ("http...", "提交参数字符串", { 'content-type': 'xxxx', ... } 或 [ 'content-type: xxxx', ... ])
+        POST/POST_BYTES ("http...", arrayBuffer, { 'content-type': 'xxxx', ... } 或 [ 'content-type: xxxx', ... ])
+
+    另外写法, 数据和头定义在一起, 此方法不能提交ArrayBuffer数据：
+        POST/POST_BYTES ("http...", { data: "", headers: {'content-type': 'xxxx', ... }})
+        POST/POST_BYTES ("http...", { data: "", headers: [ 'content-type: xxxx', ... ]})
+
+
 ### 🛠设备方法:
     // 获得设备唯一ID, len是ID长度, 最小16, 最大32;
     getDeviceID(len=(16..32)): String
@@ -124,3 +155,232 @@
     x.text(): String
     x.attr(name): String
     x.remove('jsoup选择器')
+
+
+
+
+    ### 🛠️字节数组对象相关方法(ArrayBuffer):
+    // 将ArrayBuffer 转为字符串, encode 默认为utf-8;
+    ArrayBuffer.toString(encode='utf-8'): String 
+    
+    // 将ArrayBuffer 转为hex字符串, 每个值之间用sepa分隔, 默认是一个空格;
+    ArrayBuffer.toHex(sepa=' '): String
+
+    // 将ArrayBuffer内数据进行Base64编码
+    ArrayBuffer.toBase64(): String
+
+    // 取得ArrayBuffer内数据的Md5摘要;
+    ArrayBuffer.toMd5(): String
+    
+    // 如果ArrayBuffer内的数据是BASE64编码的数据, 可使用此方法还原数据; 
+    ArrayBuffer.unBase64(): ArrayBuffer
+
+
+### 🛠️字符串对象相关方法(String):
+    // 将字符串进行base64编码;
+    String.toBase64(encode='utf-8'): String
+
+    // 将字符串转为hex字符串, 每个值之间用sepa分隔, 默认是一个空格; String -> ByteArray -> HexString
+    String.toHex(sepa=' '): String
+
+    // 将hex字符串转为字符串 HexString -> ByteArray -> String
+    // 注意, 分隔符为空的情况下(""), 每个hex值必须是两位, 如果不够两位需要自行补零;
+    // 如 ACDB8(A CD B8), A不够两位, 需要改成 0ACDB8(0A CD B8)
+    hexToString(hex字符串, 分隔符=''): String
+
+    // 将hex字符串转为ByteArray HexString -> ByteArray
+    // 注意, 分隔符为空的情况下(""), 每个hex值必须是两位, 如果不够两位需要自行补零;
+    // 如 ACDB8(A CD B8), A不够两位, 需要改成 0ACDB8(0A CD B8)
+    hexToByteArray(data, 分隔符=''): ArrayBuffer
+
+    // 取得字符串MD5摘要
+    String.toMd5(encode='utf-8'): String
+
+    // BASE64解码
+    String.base64To(encode='utf-8'): ArrayBuffer
+
+    // 将字符串转为字节数组
+    String.toByteArray(encode='utf-8'): ArrayBuffer
+
+    // 字符串转码;
+    String.toString(oldEncode: String, newEncode: String): String	
+
+    // 如果String是BASE64编码的字符串, 可使用此方法还原数据; 
+    String.unBase64(encode='utf-8'): ArrayBuffer
+
+    // 其他方法不再提供参数encode, 太麻烦了, 如果有需要,你可以使用toString(encode, encode) 进行转换;
+
+### 🛠加解密相关方法:
+    // 生成RSA密钥对; 返回数组, 0是公钥, 1是私钥;
+    crypto.getRsaKeys (length=1024): Array<String>
+
+    // rsa加密; isPublic 指使用的秘钥是否是公钥; 
+    { // 填充模式与算法, 大小写不限
+        "NoPadding"     | "NO"
+        "OAEPPadding"   | "OAEP"
+        "PKCS1Padding"  | "PKCS1"
+        "OAEPwithSHA-1andMGF1Padding"    | "SHA1"
+        "OAEPwithSHA-256andMGF1Padding"  | "SHA256"
+        "OAEPwithSHA-224andMGF1Padding"  | "SHA224"
+        "OAEPwithSHA-384andMGF1Padding"  | "SHA384"
+        "OAEPwithSHA-512andMGF1Padding"  | "SHA512"
+
+        "ECB"
+        "NONE"
+    }
+    // Rsa加密明文最大长度是117字节, 若明文(数据)长度超过117字节, 则内部自动将其分段加密, 所有分段加密完毕后，进行合并；
+    crypto.rsaEncode (秘钥: String|ArrayBuffer, isPublic: Boolean, 数据: String|ArrayBuffer, 加密方式='ECB', 填充模式='PKCS1Padding'): ArrayBuffer
+    // Rsa解密密文最大长度是128字节, 若密文(数据)长度超过128字节, 则内部自动将其分段解密，所有分段解密完毕后，进行合并；
+    crypto.rsaDecode (秘钥: String|ArrayBuffer, isPublic: Boolean, 数据: String|ArrayBuffer, 加密方式='ECB', 填充模式='PKCS1Padding'): ArrayBuffer
+    @param isPublic 指使用的秘钥是否是公钥, true是公钥, false是私钥;
+---
+    { // 填充模式与算法, 大小写不限
+        "ISO10126Padding" | "ISO10126"
+        "NoPadding"       | "NO"    | "ZeroPadding"  | "Zero" 
+        "PKCS5Padding"    | "PKCS5" | "PKCS7Padding" | "PKCS7"
+
+        "CBC"
+        "CFB"
+        "CTR"
+        "CTS"
+        "ECB"
+        "OFB"
+        "GCM"
+    }
+
+    // 返回的数据会自动去除补零;
+    crypto.aesEncode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.aesDecode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    @param 秘钥 秘钥长度必须是 16/24/32字节, 内部会自动调整密码长度, 不足16位字节,自动补零补齐16位, 超出16位不足24位,补零补齐24位, 超出24为不足32位，补零补齐32位。超出32为则抛弃32位之后的内容;
+
+---
+
+    { // 填充模式与算法, 大小写不限
+        "ISO10126Padding" | "ISO10126"
+        "NoPadding"       | "NO"    | "ZeroPadding"  | "Zero"  // 使用 NoPadding 与 ZeroPadding Fun阅读内部会自动补齐长度;
+        "PKCS5Padding"    | "PKCS5" | "PKCS7Padding" | "PKCS7"
+
+        "CBC"
+        "CFB"
+        "CTR"
+        "CTS"
+        "ECB"
+        "OFB"
+    }
+
+    // 返回的数据会自动去除补零;
+    crypto.desEncode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.desDecode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+
+---
+
+    { // 填充模式与算法, 大小写不限
+        "ISO10126Padding" | "ISO10126"
+        "NoPadding"       | "NO"    | "ZeroPadding"  | "Zero"  // 使用 NoPadding 与 ZeroPadding Fun阅读内部会自动补齐长度;
+        "PKCS5Padding"    | "PKCS5" | "PKCS7Padding" | "PKCS7"
+
+        "CBC"
+        "CFB"
+        "CTR"
+        "CTS"
+        "ECB"
+        "OFB"
+    }
+    // 回的数据会自动去除补零;
+    crypto.des3Encode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.des3Decode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    @param 秘钥长度必须是24位字节或以上, 如果参数提供的秘钥长度不够24字节, 则内部会自动以0补偿长度;
+
+    // 将字符串或字节数组进行RC4加解密, 加密与解密都使用此方法;
+    rc4(秘钥: String|ArrayBuffer, 秘钥: String|ArrayBuffer): ArrayBuffer
+---
+
+    RSA签名与验签
+    crypto.rsaSign(私钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 摘要模式: String): ArrayBuffer
+    crypto.rsaSignCheck(公钥: String|ArrayBuffer, 原始数据: String|ArrayBuffer, 摘要模式: String, 签名数据: ArrayBuffer): Boolean
+    { // RSA签名与验签摘要模式, 大小写不限;
+        "MD2withRSA"            | "MD2"
+        "MD4withRSA"            | "MD4";
+        "MD5withRSA"            | "MD5"
+        "MD5withRSA/ISO9796-2"  | "MD5ISO9796-2"
+        "RSASSA-PSS"            | "SSA-PSS"
+        "SHA1withRSA"           | "SHA1"
+        "SHA1withRSA/ISO9796-2" | "SHA1ISO9796-2"
+        "SHA1withRSA/PSS"       | "SHA1-PSS"
+        "SHA224withRSA"         | "SHA224"
+        "SHA224withRSA/PSS"     | "SHA224-PSS"
+        "SHA256withRSA"         | "SHA256"
+        "SHA256withRSA/PSS"     | "SHA256-PSS"
+        "SHA384withRSA"         | "SHA384"
+        "SHA384withRSA/PSS"     | "SHA384-PSS"
+        "SHA512withRSA"         | "SHA512"
+        "SHA512withRSA/PSS"     | "SHA512-PSS"
+    }
+
+
+### 🛠数据摘要相关方法:
+    Warning Warning FBI Warning   digestHmac  与 digest 无论使用何种算法, 提供何种数据, 最后返回的一定是字节数组字符串, 即 A0DCC896... 如此格式;
+    crypto.digestHmac (数据: String|ArrayBuffer, 秘钥: String|ArrayBuffer, 算法='md5|sha1|sha256|sha384|sha512'): String
+    crypto.digest (数据: String|ArrayBuffer, 算法='md5|md2|sha1|sha256|sha384|sha512|crc32'): String
+
+
+### 🛠杂七杂八:
+    console.log(x)/ LOGE(x)/ LOGD(x)
+    ENCODE(text, code=[编码, base64]): String
+
+    $ = HTML.parse(HTML)
+    x = $('jsoup选择器')
+    x.text(): String
+    x.attr(name): String
+    x.remove('jsoup选择器')
+
+    // 本地数据储存操作
+    localStorage.setItem (key, value)
+    localStorage.getItem (key): object
+    localStorage.clear ()
+    localStorage.removeItem (key)
+    localStorage.key (): Array<String>
+    localStorage.length (): Int
+    localStorage.exist (key): Boolean
+
+    // cookie操作
+    getCookie(key: String): String
+    setCookie(key: String, value: String)
+    removeCookie(key: String)
+    hasCookie (key: String): Boolean
+    getAllCookie(): [{key: , value: }, {key: , value: }, ...]
+    getAllCookieKey(): [key, key, ...]
+
+    // 对数据进行gzip解压缩;
+    gzipUnPack(data: ArrayBuffer|String): ArrayBuffer
+    // 对数据进行gzip压缩; 压缩完毕后返回压缩的数据
+    gzipPack(data: ArrayBuffer|String): ArrayBuffer
+
+    // 打开压缩包;密码默认是null,类型必须是字符串类型;
+    // 如果data不是zip压缩字节数据,或key不正确,会导致返回null; 代码里需要做个按断;
+    Zip.open(data: ArrayBuffer, key=null): ZipFile
+
+    // 读入压缩包的指定文件; 返回字节数组;
+    ZipFile.read(fileName): ArrayBuffer
+
+    // 获得压缩包内文件数量
+    ZipFile.length(): Int
+
+    // 获得Zip压缩包内文件列表;
+    ZipFile.list(): Array<String>
+
+    // ZIP使用完毕后, 一定要close; 否则会造成内存泄漏;
+    ZipFile.close(): viod
+    
+    // 如果你不想手动关闭zip, 请使用这个方法, 读取完毕后,自动关闭相关资源;
+    Zip.open(data, key).readAndClose(fileName): ArrayBuffer
+
+
+    // 时间戳格式化, 自动区分10/13位长度
+    // timestamp = [ null, 'time_10' | 'time_13' | time:String|Long ]
+    // timestamp参数为null,则自动生成时间戳, 为'time_10' 生成10位时间戳, 为'time_13' 生成13为时间戳, 也可以直接传入时间戳;
+    // format参数为null则不进行格式化, 否则一定会按照指定格式对时间戳进行格式化;
+    timestampFormat(timestamp=null, format='yyyy-MM-dd HH:mm:ss'): String
+
+    // 获得指定长度的随机数据
+    getRandomData(len=128):ArrayBuffer
