@@ -159,7 +159,8 @@
 
 
 
-    ### 🛠️字节数组对象相关方法(ArrayBuffer):
+    
+### 🛠️字节数组对象相关方法(ArrayBuffer):
     // 将ArrayBuffer 转为字符串, encode 默认为utf-8;
     ArrayBuffer.toString(encode='utf-8'): String 
     
@@ -174,7 +175,7 @@
     
     // 如果ArrayBuffer内的数据是BASE64编码的数据, 可使用此方法还原数据; 
     ArrayBuffer.unBase64(): ArrayBuffer
-
+    
 
 ### 🛠️字符串对象相关方法(String):
     // 将字符串进行base64编码;
