@@ -210,10 +210,10 @@
     3. 推荐使用这种方式, 推荐, 推荐, 推荐, 非常, 强烈, 特别推荐~
     authorization: [
         {
-            id: "phone"
+            id: "phone" // 为本组件分配唯一ID, 不得与 authorization 内的其他id重复, 仅输入框(text, phone, email, password)需要定义有效的id;
             name: "" // 本控件显示名称;
             type: "控件类型" // 控件类型可选 phone，password，text，button，image， 其中, phone与password与text一般，都是输入框,只不过phone会对输入内容做校验，如果不是手机号码，会报错，password会对输入的内容做遮掩处理。button是按钮，image是图像框，用来做图文验证码；
-            action: "本控件所绑定的JS方法名称" // 仅当type是button或image时，才会需要此参数, 点击按钮，会调用所指定的方法;
+            action: "本控件所绑定的JS方法名称" // 仅当type是button时，才会需要此参数, 点击按钮，会调用所指定的方法;
             bind: [] // 本控件绑定的元素, 当本控件是button时，点击本控件， 会将所绑定的元素，转为对象，传递给action定义的方法;
         }
     ]
