@@ -230,9 +230,9 @@
         "NONE"
     }
     // Rsa加密明文最大长度是117字节, 若明文(数据)长度超过117字节, 则内部自动将其分段加密, 所有分段加密完毕后，进行合并；
-    crypto.rsaEncode (秘钥: String|ArrayBuffer, isPublic: Boolean, 数据: String|ArrayBuffer, 加密方式='ECB', 填充模式='PKCS1Padding'): ArrayBuffer
+    crypto.rsaEncode (秘钥: String|ArrayBuffer, isPublic: Boolean, 数据: Base64String|ArrayBuffer, 加密方式='ECB', 填充模式='PKCS1Padding'): ArrayBuffer
     // Rsa解密密文最大长度是128字节, 若密文(数据)长度超过128字节, 则内部自动将其分段解密，所有分段解密完毕后，进行合并；
-    crypto.rsaDecode (秘钥: String|ArrayBuffer, isPublic: Boolean, 数据: String|ArrayBuffer, 加密方式='ECB', 填充模式='PKCS1Padding'): ArrayBuffer
+    crypto.rsaDecode (秘钥: String|ArrayBuffer, isPublic: Boolean, 数据: Base64String|ArrayBuffer, 加密方式='ECB', 填充模式='PKCS1Padding'): ArrayBuffer
     @param isPublic 指使用的秘钥是否是公钥, true是公钥, false是私钥;
 ---
     { // 填充模式与算法, 大小写不限
@@ -250,8 +250,8 @@
     }
 
     // 返回的数据会自动去除补零;
-    crypto.aesEncode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
-    crypto.aesDecode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.aesEncode (秘钥: String|ArrayBuffer, 数据: Base64String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.aesDecode (秘钥: String|ArrayBuffer, 数据: Base64String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
     @param 秘钥 秘钥长度必须是 16/24/32字节, 内部会自动调整密码长度, 不足16位字节,自动补零补齐16位, 超出16位不足24位,补零补齐24位, 超出24为不足32位，补零补齐32位。超出32为则抛弃32位之后的内容;
 
 ---
@@ -270,8 +270,8 @@
     }
 
     // 返回的数据会自动去除补零;
-    crypto.desEncode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
-    crypto.desDecode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.desEncode (秘钥: String|ArrayBuffer, 数据: Base64String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.desDecode (秘钥: String|ArrayBuffer, 数据: Base64String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
 
 ---
 
@@ -288,8 +288,8 @@
         "OFB"
     }
     // 回的数据会自动去除补零;
-    crypto.des3Encode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
-    crypto.des3Decode (秘钥: String|ArrayBuffer, 数据: String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.des3Encode (秘钥: String|ArrayBuffer, 数据: Base64String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
+    crypto.des3Decode (秘钥: String|ArrayBuffer, 数据: Base64String|ArrayBuffer, 加密方式='CBC', 填充模式='PKCS5Padding', iv=null): ArrayBuffer
     @param 秘钥长度必须是24位字节或以上, 如果参数提供的秘钥长度不够24字节, 则内部会自动以0补偿长度;
 
     // 将字符串或字节数组进行RC4加解密, 加密与解密都使用此方法;
