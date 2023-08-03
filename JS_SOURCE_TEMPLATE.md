@@ -213,7 +213,7 @@
             id: "phone"
             name: "" // 本控件显示名称;
             type: "控件类型" // 控件类型可选 phone，password，text，button，image， 其中, phone与password与text一般，都是输入框,只不过phone会对输入内容做校验，如果不是手机号码，会报错，password会对输入的内容做遮掩处理。button是按钮，image是图像框，用来做图文验证码；
-            acation: "本控件所绑定的JS方法名称" // 仅当type是button或image时，才会需要此参数, 点击按钮，会调用所指定的方法;
+            action: "本控件所绑定的JS方法名称" // 仅当type是button或image时，才会需要此参数, 点击按钮，会调用所指定的方法;
             bind: [] // 本控件绑定的元素, 当本控件是button时，点击本控件， 会将所绑定的元素，转为对象，传递给action定义的方法;
         }
     ]
@@ -230,16 +230,26 @@
             name: "验证码",
         }, {
             type: "button",
-            bind: ["id_phone"],
-            name: "获取验证码",
+            bind: ["id_phone"], 
+            name: "获取验证码", // 按钮标题
+            time: 60, // 按钮点击间隔;
             action: "getPhoneCode" // 调用getPhoneCode方法时, 会传入一个对象参数, 此对象内有id_phone字段, 内容是 id_phone 输入框内容;
         }, {
             type: "button",
-            bind: ["id_phone", "id_code"],
+            bind: ["id_phone", "id_code"], // 绑定上面两个输入框的id;
             name: "登录",
-            action: "login" // 调用login方法时, 会传入一个对象参数, 此对象内有id_phone和id_code字段, 内容分别对应 id_phone和id_code输入框内容;
+            action: "login" // 调用JS中的login方法, 调用login方法时, 会传入一个对象参数, 此对象内有id_phone和id_code字段, 内容分别对应 id_phone和id_code输入框内容;
+        }, {
+            type: "image",
+            name: "验证码框框",
+            action: "验证码地址"
         }
     ]
+
+    支持的type类型有：
+    1. text(字符输入框), phone(号码输入框), email(email输入框), password(密码输入框, 有遮掩符号), 必须定义有效的id
+    2. image, 必须定义有效的action
+    3. button, 必须定义有效的bind 与 action;
 
 
 ## 拓展方法(非必须)
