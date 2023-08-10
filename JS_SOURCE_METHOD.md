@@ -216,6 +216,12 @@
 
     // 其他方法不再提供参数encode, 太麻烦了, 如果有需要,你可以使用toString(encode, encode) 进行转换;
 
+    // 繁体转简体
+    String.t2s(): String
+
+    // 简体转繁体
+    String.s2t(): String
+
 ### 🛠加解密相关方法:
     // 生成RSA密钥对; 返回数组, 0是公钥, 1是私钥;
     crypto.getRsaKeys (length=1024): Array<String>
