@@ -222,6 +222,10 @@
     // 简体转繁体
     String.s2t(): String
 
+    // URL编解码
+    URLEncode (内容, 编码)
+    URLDecode (内容, 内容编码)
+
 ### 🛠加解密相关方法:
     // 生成RSA密钥对; 返回数组, 0是公钥, 1是私钥;
     crypto.getRsaKeys (length=1024): Array<String>
