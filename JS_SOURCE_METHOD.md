@@ -11,19 +11,21 @@
 
     设置请求代理
     /**
-    *   host    = 代理地址  string
-    *   port    = 代理端口  int
-    *   type    = 代理类型 http 或 socks   string
-    *   name    = 验证用户名  string
-    *   password= 验证密码    string
+    *   host    = 代理地址  string  必须为有效的代理IP;
+    *   port    = 代理端口  int     必须是有效的代理端口;
+    *   type    = 代理类型 http 或 socks, 默认是http; 此参数可空;
+    *   name    = 验证用户名  string, 默认为空字符串, 不验证用户名;
+    *   password= 验证密码    string, 默认是空字符串, 不验证密码;
     **/
     req.proxy(host, port, type="http"|"socks", name="", password="")
+
     // 例如, 请求Google搜索
     Http2.url("https://www.google.ca/search?q=%E6%88%91%E7%9A%84")
         .proxy("192.168.2.3", 1080, "http", "admin", "123456")
         .get()
 
     其中, 192.168.2.3 是我的电脑局域网地址, 使用ssr开启了局域网连接选项;
+
 
     开始请求
     get() or put(提交数据) or post(提交数据) or postFile(name, fileName, file: FilePathString|FileByteArray): Http2Result
