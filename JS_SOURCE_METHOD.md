@@ -11,13 +11,13 @@
 
     设置请求代理
     /**
-    *   address = 代理地址  string
+    *   host    = 代理地址  string
     *   port    = 代理端口  int
     *   type    = 代理类型 http 或 socks   string
     *   name    = 验证用户名  string
     *   password= 验证密码    string
     **/
-    req.proxy("address", port, type="http"|"socks", name="", password="")
+    req.proxy(host, port, type="http"|"socks", name="", password="")
 
     开始请求
     get() or put(提交数据) or post(提交数据) or postFile(name, fileName, file: FilePathString|FileByteArray): Http2Result
