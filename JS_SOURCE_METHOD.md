@@ -18,6 +18,12 @@
     *   password= 验证密码    string
     **/
     req.proxy(host, port, type="http"|"socks", name="", password="")
+    // 例如, 请求Google搜索
+    Http2.url("https://www.google.ca/search?q=%E6%88%91%E7%9A%84")
+        .proxy("192.168.2.3", 1080, "http", "admin", "123456")
+        .get()
+
+    其中, 192.168.2.3 是我的电脑局域网地址, 使用ssr开启了局域网连接选项;
 
     开始请求
     get() or put(提交数据) or post(提交数据) or postFile(name, fileName, file: FilePathString|FileByteArray): Http2Result
