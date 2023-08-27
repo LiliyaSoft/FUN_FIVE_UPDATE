@@ -409,3 +409,6 @@
 
     // 获得指定长度的随机数据
     getRandomData(len=128):ArrayBuffer
+
+    // 数组方法, 取得成员; idx >= 0, 正常,  idx < 0, 倒序取得成员;
+    Array.at(idx)
