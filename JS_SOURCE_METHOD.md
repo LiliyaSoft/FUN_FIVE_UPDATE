@@ -412,3 +412,10 @@
 
     // 数组方法, 取得成员; idx >= 0, 正常,  idx < 0, 倒序取得成员;
     Array.at(idx)
+
+    Cache.list() //  获得本书源缓存的文件名列表 [文件名1, 文件名2....]
+    Cache.clear() // 清空本书源缓存的所有文件;
+    Cache.has(name) // 检查本书源缓存目录下，是否有name文件;
+    Cache.remove(name) // 删除name缓存文件
+    Cache.write(name, fileByteArray) // 保存缓存文件;
+    Cache.read (name): ByteArray // 读入缓存文件; 
