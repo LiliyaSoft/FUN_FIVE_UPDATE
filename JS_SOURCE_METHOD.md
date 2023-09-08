@@ -414,9 +414,9 @@
     Array.at(idx)
 
     // 缓存管理
-    Cache.list() //  获得本书源缓存的文件名列表 [文件名1, 文件名2....]
-    Cache.clear() // 清空本书源缓存的所有文件;
-    Cache.has(name) // 检查本书源缓存目录下，是否有name文件;
-    Cache.remove(name) // 删除name缓存文件
-    Cache.write(name, fileByteArray) // 保存缓存文件;
-    Cache.read (name): ByteArray // 读入缓存文件; 
+    getCacheList () //  获得本书源缓存的文件名列表 [文件名1, 文件名2....]
+    clearCache() // 清空本书源缓存的所有文件;
+    hasCache(name) // 检查本书源缓存目录下，是否有name文件;
+    removeCache(name) // 删除name缓存文件
+    writeCache(name, fileByteArray) // 保存缓存文件;
+    readCache(name): ByteArray // 读入缓存文件; 
