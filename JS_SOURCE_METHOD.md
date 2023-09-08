@@ -420,3 +420,4 @@
     removeCache(name) // 删除name缓存文件
     writeCache(name, fileByteArray) // 保存缓存文件;
     readCache(name): ByteArray // 读入缓存文件; 
+    
