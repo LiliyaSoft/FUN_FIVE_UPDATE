@@ -19,6 +19,15 @@
     **/
     req.proxy(host, port, type="http"|"socks", name="", password="")
 
+    添加formdata数据  
+    /**
+    *   key            = 参数名称
+    *   value          = 提交数据. 可以是字符串 或 ByteArray
+    *   contentType    = mediaType, 不需要就填空字符串即可. 不要传入 null 或 undefined;
+    **/
+    req.addPart(key: String, value: String | ArrayBuffer, mediaType: String = "");
+
+
     // 例如, 请求Google搜索
     Http2.url("https://www.google.ca/search?q=%E6%88%91%E7%9A%84")
         .proxy("192.168.2.3", 1080, "http", "admin", "123456")
@@ -29,6 +38,7 @@
 
     开始请求
     get() or put(提交数据) or post(提交数据) or postFile(name, fileName, file: FilePathString|FileByteArray): Http2Result
+    or formData()
 
     如果在提交post数据时, header中未指定content-type, 则App会对提交数据进行检测, 如果数据是json, 则以application/json charset=${data}.charset 进行提交；
     如果数据不是json，但是是字符串类型，则App会将其视为一段字符串数据, 并且使用默认的 application/x-www-form-urlencoded 进行提交；
@@ -41,6 +51,12 @@
         fileName 是 提交文件名(不包含路径)
         file 是 文件路径字符串或文件字节数组
     
+    // 提交formData()
+    Http2.url("https://www.google.ca/search?q=%E6%88%91%E7%9A%84")
+        .addPart("xxx", "aaaaaa")
+        .formData()
+
+
     Http2Result = {     
         var code    = -1
         var body    = ByteArray(0)
