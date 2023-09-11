@@ -56,6 +56,11 @@
         .addPart("xxx", "aaaaaa")
         .formData()
 
+    // 使用 formData() 提交文件
+    Http2.url("https://www.google.ca/search?q=%E6%88%91%E7%9A%84")
+        .addPart("file", 文件数据ByteArray, 提交保存文件名)
+        .formData()
+
 
     Http2Result = {     
         var code    = -1
