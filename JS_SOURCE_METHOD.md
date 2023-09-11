@@ -25,7 +25,7 @@
     *   value          = 提交数据. 可以是字符串 或 ByteArray
     *   contentType    = mediaType, 不需要就填空字符串即可. 不要传入 null 或 undefined;
     **/
-    req.addPart(key: String, value: String | ArrayBuffer, mediaType: String = "");
+    req.addPart(key: String, value: String | ArrayBuffer, fileName: String = "", mediaType: String = "");
 
 
     // 例如, 请求Google搜索
