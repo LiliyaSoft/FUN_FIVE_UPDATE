@@ -84,6 +84,8 @@
         vip: ,    // 本章节是否是Vip/收费章节;
         *name: ,  // 章节名称
         *url:  ,  // 章节地址, 虽然标记有星号, 但是可以空;
+                  // 如果本源支持加载评论数据, 则url应定义为json, 如:
+                  // { url:, bookId:, chapterId: }
         volume: , // 是否是卷名? 
         words: ,  // 本章节字符数量
         update: , // 本章节更新时间
@@ -100,29 +102,16 @@
     @RETURN
     {
         *content: , //正文内容
-        msg: ,//章节附加内容, 如 作者说明, 显示在章节末尾;
+        msg: ,//章节附加内容, 如 作者说明, 显示在章节末尾; 暂时无用;
         font: "字体文件名", // 如果本章节需要特定的字体文件进行解密, 则需要指定此字段; JS源自行完成字体的下载;  
+        comment: {}, // 本章节所有段落评论, "index": { count:, id: }
 
-        button: , // 当章节加载失败时, 可以添加此字段, 
-        method: , // 点击按钮后,执行JS方法; App执行此方法时, 会将当前的书籍章节ID传入;  method支持JS方法, url:http/https:, uri:com.xxx.xxx.xxActivity
-        // 如 buyChapter(chapterId)
+        button: , // 当章节加载失败时,可以添加此字段; 暂时无用;
+        method: , // 点击按钮后,执行JS方法; 暂时无用;
     }
 
-    // 如 本章节是付费章节, 需要购买后阅读,
-    {
-        content: "本章节是付费章节, 需要购买后才能正常阅读", 
-        button : "点击购买",
-        method : "buyChapter"
-    }
+    OR
 
-    // 如 非网络问题导致的加载失败
-    {
-        content: "正文加载失败, 点击重试", 
-        button : "重新加载",
-        method : "chapter"
-    }
-
-    @OR
     章节内容字符串
 
 ### 5.获得分类书籍方法
