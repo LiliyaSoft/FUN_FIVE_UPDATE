@@ -259,4 +259,4 @@
     1.profile(): String  // 获得账户信息;
     2.rank(分类1, 分类2, 页索引:Int)  // 获得书城(或称 发现)书籍列表; 返回数据与search一致;
     3.comment/replyComment; 获得书籍章节评论列表, 内容过多, 另一页展示; 
-### [自定义接口](./JS_SOURCE_COMMENT.md)
+### [评论内容文档](./JS_SOURCE_COMMENT.md)
