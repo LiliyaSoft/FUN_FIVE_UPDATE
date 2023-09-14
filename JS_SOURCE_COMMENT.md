@@ -2,7 +2,7 @@
     1.comment 必须
     2.replyComment 非必须
 
-## `comment(book, commentId, page) : []`<br>
+# `comment(book, commentId, page) : []`<br>
 >`本方法是加载章节段落评论方法;`<br>
 >`*  book 由 catlog 返回的 url 字段, 此字段应为json, 且必须具有 bookId, chapterId这两个记录, 字段名无做限制, 由书源自行决定;`<br>
 
@@ -75,7 +75,7 @@
     }
 
 
-## `replyComment(book, commentId, page, paragraph) : []`<br>
+# `replyComment(book, commentId, page, paragraph) : []`<br>
 >`本方法是加载指定评论的所有回复列表;`<br>
 >`*  book 由 catlog 返回的 url 字段, 此字段应为json, 且必须具有 bookId, chapterId这两个记录, 字段名无限制, 由书源自行决定;`<br>
 
