@@ -49,6 +49,7 @@
         }
     }
 
+
 #### CODE
     function comment(book, commentId, page) {
         let bid = JSON.parse(book).bid;
