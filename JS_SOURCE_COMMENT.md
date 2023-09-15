@@ -134,7 +134,7 @@
         let array = []
         for (let item of $.List) {
             array.push({
-                reply_user_name:  item.reply_user_name,
+                replyUserName  :  item.reply_user_name,
                 userName       :  item.userName,
                 userImg        :  item.userIcon,
                 content        :  item.content,
