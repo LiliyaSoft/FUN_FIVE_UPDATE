@@ -2,13 +2,13 @@
     1.comment 必须
     2.replyComment 非必须
 
-# `comment(book, commentId, page) : []`<br>
+# `comment(book, paragraphId, page) : []`<br>
 >`本方法是加载章节段落评论方法;`<br>
 >`*  book 由 catlog 返回的 url 字段, 此字段应为json, 且必须具有 bookId, chapterId这两个记录, 字段名无做限制, 由书源自行决定;`<br>
 
 ### PARAM
 >* ` book              包含书籍ID与章节ID的JSON`<br>
->* ` commentId         对应评论ID或段落索引`<br>
+>* ` paragraphId       对应评论ID或段落索引`<br>
 >* ` page              加载评论页数`<br>
 
 
