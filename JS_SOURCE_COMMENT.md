@@ -51,12 +51,12 @@
 
 
 #### CODE
-    function comment(book, commentId, page) {
+    function comment(book, paragraphId, page) {
         let bid = JSON.parse(book).bid;
         let cid = JSON.parse(book).cid;
 
         // 假设请求地址;
-        let response = HTTP操作(url + `bookId=${bid}&chapterId=${cid}&page=${page}&comment=${commentId}`)
+        let response = HTTP操作(url + `bookId=${bid}&chapterId=${cid}&page=${page}&paragraph=${paragraphId}`)
         let $ = JSON.parse(response).Data
         let array = []
         for (let item of $.List) {
