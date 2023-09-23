@@ -67,7 +67,6 @@
                 userImg  :   item.userIcon,
                 content  :   item.content,
                 .....
-                replys   :   BigInt(item.Id).toString()
             })
         }
 
@@ -138,6 +137,7 @@
                 userName       :  item.userName,
                 userImg        :  item.userIcon,
                 content        :  item.content,
+                ...
             })
         }
 
