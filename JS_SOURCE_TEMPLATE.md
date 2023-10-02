@@ -23,6 +23,7 @@
                 * name: ,   // 书籍名称
                 * author: , // 书籍作者
                 * detail: , // 书籍URL或地址
+                type:       // 类型，书籍或漫画  book comic
                 cover: ,    // 书籍封面
                 summary: ,  // 书籍简介
                 category: , // 书籍类型
@@ -42,6 +43,7 @@
             * name: ,   // 书籍名称
             * author: , // 书籍作者
             * detail: , // 书籍URL或地址
+            type:       // 类型，书籍或漫画  book comic
             cover: ,    // 书籍封面
             summary: ,  // 书籍简介
             category: , // 书籍类型
@@ -131,6 +133,7 @@
                 * name: ,   // 书籍名称
                 * author: , // 书籍作者
                 * detail: , // 书籍URL或地址
+                type:       // 类型，书籍或漫画  book comic
                 cover: ,    // 书籍封面
                 summary: ,  // 书籍简介
                 category: , // 书籍类型
@@ -188,9 +191,10 @@
 
 ### 8.定义书源信息
     var bookSource = JSON.stringify({
+        type: "源类型",     // 定义此源类型, 目前可选值有 book 与 comic;
         group: "xxx分组",   // 定义默认分组;
         name: "xxxx小说",   // 源名称, 可随意, 可重复;
-        url: "17k.com",    // 源网站地址, 不可重复, 重复的url,会被视为一个书源;
+        url: "17k.com",    // 源网站地址, 不可重复, 重复的url,会被视为一个书源; 不要带:/之类的符号，26个字母不够你用的?
         authorization: "https://passport.17k.com/login", // 定义登录访问Url, 如果希望使用post/get进行登录, 请参考
         cookies: [".17k.com"], // 定义此源可访问的cookie
         ranks: ranks           // 定义书城分类字段名
