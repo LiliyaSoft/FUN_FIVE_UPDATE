@@ -469,12 +469,11 @@
     var b1 = Bitmap.create(200, 200);
     b1.drawBitmap (src, 0, 0, 200, 200, 0, 0, 200, 200);
 
-    Bitmap.Config {
-        ARGB_8888, // 透明
-        RGB_565,   // 不透明
-    }
+    // Bitmap.Config
+    ARGB_8888 = 0, // 透明
+    RGB_565   = 1, // 不透明
 
-    Bitmap.Format {
-        PNG,
-        JPEG
-    }
+    // Bitmap.Format 
+    PNG  = 0,
+    JPEG = 1
+    
