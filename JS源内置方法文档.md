@@ -459,7 +459,6 @@
     bitmap.drawRect(left, top, right, bottom, color); // 在Bitmap上绘制指定颜色的REct;
     bitmap.drawLine(left, top, right, bottom, lineWidth, color); // 在Bitmap上回执线条;
 
-    bitmap.drawBitmap (bmp, destleft, destTop); // 简略版;
     bitmap.drawBitmap(bmp, srcLeft, srcTop, srcRight, srcBottom, destLeft, destTop, destRight, destBottom); // 将指定Bitmap绘制到本Bitmap上; src坐标对应bmp的选取区域, dest对应回执区域
 
     // drawBitmap 详解;
