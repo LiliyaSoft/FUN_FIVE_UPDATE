@@ -456,7 +456,7 @@
     bitmap.height(): Int// 高度
     bitmap.toJavaBitmap (): JavaBitmap; // 将js bitmap对象转为java的bitmap对象; 注意, js无法操作此方法返回值;
     bitmap.toByteArray(format, quality): ByteArray; 将Bitmap转为bytes; format=Bitmap.Format, quality=压缩质量, 0..100; 默认为(PNG, 100);
-    // -bitmap.drawText(str, left, top, size, color); //在Bitmap上绘制字符串;
+    bitmap.drawText(str, left, top, size, color); //在Bitmap上绘制字符串;
     // -bitmap.drawRect(left, top, right, bottom, color); // 在Bitmap上绘制指定颜色的REct;
     // -bitmap.drawLine(left, top, right, bottom, lineWidth, color); // 在Bitmap上回执线条;
 
