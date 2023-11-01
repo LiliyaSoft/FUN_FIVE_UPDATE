@@ -442,3 +442,41 @@
     writeCache(name, fileByteArray) // 保存缓存文件;
     readCache(name): ByteArray // 读入缓存文件; 
     
+
+
+### Bitmap相关方法, 注意: 大写的Bitmap是类名, 小写是对象;
+    // 创建方法
+    Bitmap.create (bytes, offset, len): Bitmap; 从bytes创建Bitmap;
+    Bitmap.create (w, h, cfg): Bitmap; // 创建一个指定宽高的Bitmap对象; cfg为bitmap 颜色格式; cfg可忽略, 默认为RGB_565
+    Bitmap.create (bmp): Bitmap; // 复制一个bitmap;
+
+    // 操作方法
+    bitmap.fillColor(color); //bitmap填充颜色;
+    bitmap.width(): Int // 宽度
+    bitmap.height(): Int// 高度
+    bitmap.toByteArray(format, compress): ByteArray; 将Bitmap转为bytes; format=Bitmap.Format, compress=压缩率, 0..100; 默认为(PNG, 100);
+    bitmap.drawText(str, left, top, size, color); //在Bitmap上绘制字符串;
+    bitmap.drawRect(left, top, right, bottom, color); // 在Bitmap上绘制指定颜色的REct;
+    bitmap.drawLine(left, top, right, bottom, lineWidth, color); // 在Bitmap上回执线条;
+
+    bitmap.drawBitmap (bmp, destleft, destTop); // 简略版;
+    bitmap.drawBitmap(bmp, srcLeft, srcTop, srcRight, srcBottom, destLeft, destTop, destRight, destBottom); // 将指定Bitmap绘制到本Bitmap上; src坐标对应bmp的选取区域, dest对应回执区域
+
+    // drawBitmap 详解;
+    如 我有一张 300*300的图像, 但是只有其中200*200的区域是有效数据，200之外的图像是花屏, 我只需要将200以内的图像, 绘制出来, 即可如此做;
+
+    var bytes= httpLoad(...); // 假设此方法获得图像数据;
+    var src= Bitmap.create(bytes, 0, bytes.size());
+    var b1 = Bitmap.create(200, 200);
+    b1.drawBitmap (src, 0, 0, 200, 200, 0, 0, 200, 200);
+
+    Bitmap.Config {
+        ARGB_8888, // 透明
+        RGB_565,   // 不透明
+    }
+
+    Bitmap.Format {
+        PNG,
+        JPEG,
+        BMP
+    }
