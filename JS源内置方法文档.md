@@ -460,15 +460,15 @@
     // -bitmap.drawRect(left, top, right, bottom, color); // 在Bitmap上绘制指定颜色的REct;
     // -bitmap.drawLine(left, top, right, bottom, lineWidth, color); // 在Bitmap上回执线条;
 
-    bitmap.drawBitmap(bmp, srcLeft, srcTop, srcRight, srcBottom, destLeft, destTop, destRight, destBottom); // 将指定Bitmap绘制到本Bitmap上; src坐标对应bmp的选取区域, dest对应回执区域
-    // src坐标和dest坐标均可为空, 如果为空, 则默认是0, src的Right和Bottom如果为空,则默认bmp的宽度与高度,  dest的Right和Bottom如果为空, 则默认为bitmap的宽度与高度;
+    bitmap.drawBitmap(bmp, x, y); // 将指定Bitmap绘制到本Bitmap上; 
     // drawBitmap 详解;
     如 我有一张 300*300的图像, 但是只有其中200*200的区域是有效数据，200之外的图像是花屏, 我只需要将200以内的图像, 绘制出来, 即可如此做;
 
     var bytes= httpLoad(...); // 假设此方法获得图像数据;
     var src= Bitmap.create(bytes, 0, bytes.size());
     var b1 = Bitmap.create(200, 200);
-    b1.drawBitmap (src, 0, 0, 200, 200, 0, 0, 200, 200);
+    var s1 = Bitmap.copyRect(src, 0, 0, 200, 200);
+    b1.drawBitmap (s1, 0, 0);
 
     // Bitmap.Config
     ARGB_8888 = 0, // 透明
