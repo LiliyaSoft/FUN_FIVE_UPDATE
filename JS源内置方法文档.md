@@ -455,9 +455,9 @@
     bitmap.width(): Int // 宽度
     bitmap.height(): Int// 高度
     bitmap.toByteArray(format, compress): ByteArray; 将Bitmap转为bytes; format=Bitmap.Format, compress=压缩率, 0..100; 默认为(PNG, 100);
-    bitmap.drawText(str, left, top, size, color); //在Bitmap上绘制字符串;
-    bitmap.drawRect(left, top, right, bottom, color); // 在Bitmap上绘制指定颜色的REct;
-    bitmap.drawLine(left, top, right, bottom, lineWidth, color); // 在Bitmap上回执线条;
+    // -bitmap.drawText(str, left, top, size, color); //在Bitmap上绘制字符串;
+    // -bitmap.drawRect(left, top, right, bottom, color); // 在Bitmap上绘制指定颜色的REct;
+    // -bitmap.drawLine(left, top, right, bottom, lineWidth, color); // 在Bitmap上回执线条;
 
     bitmap.drawBitmap(bmp, srcLeft, srcTop, srcRight, srcBottom, destLeft, destTop, destRight, destBottom); // 将指定Bitmap绘制到本Bitmap上; src坐标对应bmp的选取区域, dest对应回执区域
 
