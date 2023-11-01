@@ -476,6 +476,5 @@
 
     Bitmap.Format {
         PNG,
-        JPEG,
-        BMP
+        JPEG
     }
