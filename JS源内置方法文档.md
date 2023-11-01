@@ -446,9 +446,9 @@
 
 ### Bitmap相关方法, 注意: 大写的Bitmap是类名, 小写是对象;
     // 创建方法
-    Bitmap.create (bytes, offset, len): Bitmap; 从bytes创建Bitmap;
-    Bitmap.create (w, h, cfg): Bitmap; // 创建一个指定宽高的Bitmap对象; cfg为bitmap 颜色格式; cfg可忽略, 默认为RGB_565
-    Bitmap.create (bmp): Bitmap; // 复制一个bitmap;
+    Bitmap.createBytes (bytes, offset, len): Bitmap; 从bytes创建Bitmap;
+    Bitmap.createSize (w, h, cfg): Bitmap; // 创建一个指定宽高的Bitmap对象; cfg为bitmap 颜色格式; cfg可忽略, 默认为RGB_565
+    Bitmap.copy (bmp): Bitmap; // 复制一个bitmap;
 
     // 操作方法
     bitmap.fillColor(color); //bitmap填充颜色;
