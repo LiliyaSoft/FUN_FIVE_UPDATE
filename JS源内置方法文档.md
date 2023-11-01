@@ -447,7 +447,7 @@
 ### Bitmap相关方法, 注意: 大写的Bitmap是类名, 小写是对象;
     // 创建方法
     Bitmap.createBytes (bytes, offset, len): Bitmap; 从bytes创建Bitmap;
-    Bitmap.createSize (w, h, cfg): Bitmap; // 创建一个指定宽高的Bitmap对象; cfg为bitmap 颜色格式; cfg可忽略, 默认为RGB_565
+    Bitmap.createSize (w, h, cfg): Bitmap; // 创建一个指定宽高的Bitmap对象; cfg为bitmap 颜色格式 可选查看Bitmap.Config;
     Bitmap.copy (bmp): Bitmap; // 复制一个bitmap;
     Bitmap.copyRect (bmp, x, y, width, height): Bitmap; // 复制Bitmap指定区域数据(相当于剪裁图片, 但是不影响原图片数据);
 
@@ -455,7 +455,6 @@
     bitmap.fillColor(color); //bitmap填充颜色;
     bitmap.width(): Int // 宽度
     bitmap.height(): Int// 高度
-    bitmap.toJavaBitmap (): JavaBitmap; // 将js bitmap对象转为java的bitmap对象; 注意, js无法操作此方法返回值;
     bitmap.toByteArray(format, quality): ByteArray; 将Bitmap转为bytes; format=Bitmap.Format, quality=压缩质量, 0..100; 默认为(PNG, 100);
     bitmap.drawText(str, left, top, size, color); //在Bitmap上绘制字符串;
     // -bitmap.drawRect(left, top, right, bottom, color); // 在Bitmap上绘制指定颜色的REct;
