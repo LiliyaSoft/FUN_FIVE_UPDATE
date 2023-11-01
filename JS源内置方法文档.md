@@ -373,7 +373,7 @@
 ### 🛠数据摘要相关方法:
     Warning Warning FBI Warning   digestHmac  与 digest 无论使用何种算法, 提供何种数据, 最后返回的一定是字节数组字符串, 即 A0DCC896... 如此格式;
     crypto.digestHmac (数据: String|ArrayBuffer, 秘钥: String|ArrayBuffer, 算法='md5|sha1|sha256|sha384|sha512'): String
-    crypto.digest (数据: String|ArrayBuffer, 算法='md5|md2|sha1|sha256|sha384|sha512|crc32'): String
+    crypto.digest (数据: String|ArrayBuffer, 算法='md5|md2|sha1|sha256|sha384|sha512|crc32|crc16|adler32'): String
 
 
 ### 🛠杂七杂八:
