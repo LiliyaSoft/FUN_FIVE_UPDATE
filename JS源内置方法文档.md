@@ -449,6 +449,7 @@
     Bitmap.createBytes (bytes, offset, len): Bitmap; 从bytes创建Bitmap;
     Bitmap.createSize (w, h, cfg): Bitmap; // 创建一个指定宽高的Bitmap对象; cfg为bitmap 颜色格式; cfg可忽略, 默认为RGB_565
     Bitmap.copy (bmp): Bitmap; // 复制一个bitmap;
+    Bitmap.copyRect (bmp, x, y, width, height): Bitmap; // 复制Bitmap指定区域数据(相当于剪裁图片, 但是不影响原图片数据);
 
     // 操作方法
     bitmap.fillColor(color); //bitmap填充颜色;
