@@ -35,7 +35,7 @@
             }
         ], 
 
-        "end": Boolean  // 是否支持下一页?  如果返回的books为empty，则默认将次字段设为false;
+        "end": Boolean  // 是否没有下一页数据了? 默认为True, 如果为false, 则App会在下拉时, 加载下一页数据, 如果books数组为空, 则App会将此值改为True;
     }
     @OR
     [
